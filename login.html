@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background: url(image7.png) no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            width: 350px;
+            height: auto;
+            text-align: center;
+            border: 1px solid rgb(241, 241, 241);
+            border-radius: 12px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(6px);
+            box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .wrapper h2 {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-field input[type="text"],
+        .input-field input[type="alamat"],
+        .input-field input[type="tel"],
+        .input-field input[type="text"] {
+            border-radius: 10px;
+            background: transparent;
+            margin: 15px 0;
+            border: 2px solid rgb(255, 255, 255);
+            width: 300px;
+            height: 15px;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .input-field i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            color: rgb(252, 252, 252);
+        }
+
+        input::placeholder {
+            color: rgb(255, 255, 255);
+        }
+
+        input:focus::placeholder {
+            transform: translateY(-100%);
+            transition: transform 0.2s ease-in-out;
+            font-size: 14px;
+        }
+
+        .input-field input:not(:focus)::placeholder {
+            transform: translateY(0%);
+            transition: transform 0.2s ease-in-out;
+            font-size: 16px;
+        }
+
+        button.submit {
+            background: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 45px;
+            width: 200px;
+            height: 45px;
+            margin-top: 20px;
+        }
+
+        .wrapper p {
+            margin-top: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Salsa flower's</h2>
+        <form id="contactForm">
+            <div class="input-field">
+                <input type="text" id="nama" placeholder="Nama" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-field">
+                <input type="text" id="alamat" placeholder="Alamat" required>
+            </div>
+            <div class="input-field">
+                <input type="tel" id="nohp" placeholder="No Hp" required>
+            </div>
+            <div class="input-field">
+                <input type="text" id="pesan" placeholder="Pesan" required>
+            </div>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nama = document.getElementById('nama').value;
+            const alamat = document.getElementById('alamat').value;
+            const nohp = document.getElementById('nohp').value;
+            const pesan = document.getElementById('pesan').value;
+
+            // Handle the form submission, e.g., send the data to a server or display a message
+            alert(`Nama: ${nama}\nAlamat: ${alamat}\nNo Hp: ${nohp}\nPesan: ${pesan}`);
+
+            // Optionally, you can reset the form after submission
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+</body>
+
+</html>
